@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  
+
+  post 'voters/create'
+  get 'voters/show'
+  put 'voters/update'
+
   get 'candidates/index'
   get 'candidates/show'
   post 'candidates/create'

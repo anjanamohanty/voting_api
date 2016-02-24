@@ -3,7 +3,7 @@
 one:
   name: MyString
   party: MyString
-  token: MyString
+  token: 12345
 
 two:
   name: MyString
