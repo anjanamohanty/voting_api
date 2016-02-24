@@ -4,10 +4,11 @@ class CandidatesController < ApplicationController
   end
 
   def show
-    render json: Candidate.first
+    render json: Candidate.find(params[:id])
   end
 
   def create
-    Candidate.create!(name: params["name"], district: "Durham County", party: "Independent", hometown: "Durham")
+    c = Candidate.create(name: params["name"], district: "Durham County", party: "Independent", hometown: "Durham")
+    render json: c
   end
 end
