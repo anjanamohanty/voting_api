@@ -14,6 +14,7 @@ class RaceTest < ActiveSupport::TestCase
     r.votes << v_two
 
     assert_equal 2, r.votes.count
+    assert_equal v.race_id, r.id
   end
 
   test "races have many candidates" do
@@ -25,5 +26,6 @@ class RaceTest < ActiveSupport::TestCase
     r.candidates << c_two
 
     assert_equal 2, r.candidates.count
+    assert_equal c.race_id, r.id
   end
 end

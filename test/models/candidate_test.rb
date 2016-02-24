@@ -18,5 +18,6 @@ class CandidateTest < ActiveSupport::TestCase
     c.votes << v_two
 
     assert_equal 2, c.votes.count
+    assert_equal v.candidate_id, c.id
   end
 end
