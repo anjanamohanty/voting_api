@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   get 'races/index'
-
   get 'races/show'
+  get 'api/v1/race/show' => 'races#show'
+  get 'api/v1/race/index' => 'races#index'
 
   post 'votes/create'
   get 'votes/index'

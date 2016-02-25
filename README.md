@@ -31,4 +31,5 @@ POST /votes/create?voter_id=[your_voter_id]&candidate_id=[candidate_id]&token=[y
 ```
 This action will not work with an incorrect token or if a vote has already been cast.
 
+## DB Schema
 An [ERD can be found here](https://www.lucidchart.com/invitations/accept/1928e8f8-8d9c-405d-859f-80c143101f86)

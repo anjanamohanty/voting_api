@@ -13,4 +13,5 @@ class Voter < ActiveRecord::Base
     def ensure_token_exists
       self.token = token || SecureRandom.hex
     end
+
 end
