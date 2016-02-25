@@ -39,4 +39,14 @@ class VoteTest < ActiveSupport::TestCase
     assert_equal 2, r.votes.count
     assert_equal vote.race_id, r.id
   end
+
+  test "votes are unique to race and voter pairs" do
+    v = Voter.create!(name: "Anjana Mohanty", party: "Independent")
+    r = Race.create!(name: "2016 Durham County")
+    r_two = Race.create!(name: "2016 Presidential")
+
+    assert Vote.create(voter_id: v.id, race_id: r.id, candidate_id: 2).valid?
+    assert Vote.create(voter_id: v.id, race_id: r_two.id, candidate_id: 3).valid?
+    refute Vote.create(voter_id: v.id, race_id: r.id, candidate_id: 3).valid?
+  end
 end
