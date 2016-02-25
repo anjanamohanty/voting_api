@@ -24,5 +24,4 @@ class VotersControllerTest < ActionController::TestCase
     put :update, id: v.id, token: "123", name: "Jennifer"
     refute response.body.include?("Jennifer")
   end
-
 end
