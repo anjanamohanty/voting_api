@@ -7,6 +7,11 @@ one:
   token: 12345
 
 two:
-  name: MyString
+  name: Patrick
   party: MyString
   token: MyString
+
+three:
+  name: Kerry
+  party: Rep
+  token: 23456

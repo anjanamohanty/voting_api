@@ -10,12 +10,12 @@ class VotesControllerTest < ActionController::TestCase
 
   test "should get index" do
     get :index
-    assert response.body.include?("1")
+    assert response.body.include?("Bob")
   end
 
   test "should get destroy" do
-    delete :destroy, id: votes(:one).id, voter_id: voters(:one).id
-    assert response.body.include?("Delete")
+    assert_difference "Vote.count", -1 do
+      delete :destroy, id: votes(:one).id, voter_id: voters(:one).id, token: voters(:one).token
+    end
   end
-
 end
