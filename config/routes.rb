@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'races/index'
+
+  get 'races/show'
+
   post 'votes/create'
   get 'votes/index'
   delete 'votes/destroy'
